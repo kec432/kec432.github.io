@@ -20,19 +20,28 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"搜索帖子","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"在 ${time} 毫秒内找到 ${hits} 结果"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="一句话的长度">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类页">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="关于CSRF的基础学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSRF基础学习">
+<meta property="og:url" content="http://example.com/2024/10/05/CSRF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一句话的长度">
+<meta property="og:description" content="关于CSRF的基础学习">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2013-07-13T12:46:25.000Z">
-<meta property="article:modified_time" content="2024-07-11T12:06:04.896Z">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1707584637022-b1d0e1ce-1c1f-42ac-a0c8-30bd2e2e131b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp/resize,w_687,limit_0">
+<meta property="og:image" content="https://i.imgur.com/gAMY0Kj.png">
+<meta property="og:image" content="https://i.imgur.com/CKb0yv1.png">
+<meta property="og:image" content="https://i.imgur.com/tvwYpUz.png">
+<meta property="og:image" content="https://i.imgur.com/8Pj4ADu.png">
+<meta property="og:image" content="https://i.imgur.com/0HeaNxc.png">
+<meta property="og:image" content="https://i.imgur.com/xiSnCcC.png">
+<meta property="article:published_time" content="2024-10-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-10-05T06:37:55.706Z">
 <meta property="article:author" content="kec的博客">
+<meta property="article:tag" content="csrf">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/26698826/1707584637022-b1d0e1ce-1c1f-42ac-a0c8-30bd2e2e131b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp/resize,w_687,limit_0">
 
-<link rel="canonical" href="http://example.com/categories/">
+<link rel="canonical" href="http://example.com/2024/10/05/CSRF/">
 
 
 <script id="page-configurations">
@@ -40,13 +49,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类页 | Hexo
-</title>
+  <title>CSRF基础学习 | Hexo</title>
   
 
 
@@ -153,51 +161,174 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/05/CSRF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kec的博客">
+      <meta itemprop="description" content="一句话的长度">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSRF基础学习
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">分类页
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2024-10-05 00:00:00 / 修改时间：14:37:55" itemprop="dateCreated datePublished" datetime="2024-10-05T00:00:00+08:00">2024-10-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>关于CSRF的基础学习</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<span id="more"></span>
+
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>全称Cross-site request forgery，翻译过来就是跨站请求伪造</p>
+<p>指利用受害者尚未失效的身份认证信息（cookie、会话等），诱骗其点击恶意链接或者访问包含攻击代码的页面，在受害人不知情的情况下以受害者的身份向（身份认证信息所对应的）服务器发送请求，从而完成非法操作(如转账、改密等）</p>
+<p><strong>CSRF与XSS最大的区别就在于，CSRF并没有盗取cookie而是直接利用</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/26698826/1707584637022-b1d0e1ce-1c1f-42ac-a0c8-30bd2e2e131b.png?x-oss-process=image/watermark,type_d3F5LW1pY3JvaGVp,size_20,text_eml5ZWJ1a3U=,color_FFFFFF,shadow_50,t_80,g_se,x_10,y_10/format,webp/resize,w_687,limit_0" alt="image.png"></p>
+<h1 id="攻击演示"><a href="#攻击演示" class="headerlink" title="攻击演示"></a>攻击演示</h1><p>环境：pikachu靶场</p>
+<p><img src="https://i.imgur.com/gAMY0Kj.png"></p>
+<p>构造恶意链接:<br><code>http://192.168.0.215/pikachu-master/vul/csrf/csrfget/csrf_get_edit.php?sex=aaa&amp;phonenum=aaa&amp;add=aaa&amp;email=aaaa&amp;submit=submit</code></p>
+<p>点击后用户信息被修改成aaa</p>
+<p><img src="https://i.imgur.com/CKb0yv1.png"></p>
+<table>
+<thead>
+<tr>
+<th>简称</th>
+<th>XSS</th>
+<th>CSRF</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>全称</td>
+<td>跨站脚本攻击</td>
+<td>客户端请求伪造</td>
+</tr>
+<tr>
+<td>步骤-1</td>
+<td>C用户-&gt;登录-&gt;A站(存在xss漏洞)</td>
+<td>C用户-&gt;登录A站(存在CSRF漏洞)</td>
+</tr>
+<tr>
+<td>步骤-2</td>
+<td>C用户点击了B用户发的恶意链接</td>
+<td>C用户点击了B用户发的恶意链接</td>
+</tr>
+<tr>
+<td></td>
+<td>C用户的cookie泄露给了B</td>
+<td></td>
+</tr>
+<tr>
+<td>结果</td>
+<td>B用户可以利用cookie直接操作C用户在A网站的账户</td>
+<td>B用户以C用户的身份向A站发送功能请求</td>
+</tr>
+</tbody></table>
+<p><img src="https://i.imgur.com/tvwYpUz.png"></p>
+<h1 id="防护手段"><a href="#防护手段" class="headerlink" title="防护手段"></a>防护手段</h1><p>验证码<br><img src="https://i.imgur.com/8Pj4ADu.png"></p>
+<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。</p>
+<p>以<code>http://www.aa.com:8080/index/vue.js</code>为例</p>
+<table>
+<thead>
+<tr>
+<th>http:&#x2F;&#x2F;</th>
+<th>www.</th>
+<th>aaa.com</th>
+<th>:8080</th>
+<th>&#x2F;index&#x2F;vue.js</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>协议</td>
+<td>子域名</td>
+<td>主域名</td>
+<td>端口号</td>
+<td>资源</td>
+</tr>
+<tr>
+<td>其中，同源主要指得是协议+域名+端口号前三者相同，前三者任一个不一样则会产生跨域。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://i.imgur.com/0HeaNxc.png"></p>
+<p><img src="https://i.imgur.com/xiSnCcC.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/csrf/" rel="tag"># csrf</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/10/03/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" rel="prev" title="文件包含基础学习">
+      <i class="fa fa-chevron-left"></i> 文件包含基础学习
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 2 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8C%83%E5%BC%8F%E9%98%85%E8%AF%BB/">范式阅读</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -248,6 +379,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E6%BC%94%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">攻击演示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%B2%E6%8A%A4%E6%89%8B%E6%AE%B5"><span class="nav-number">3.</span> <span class="nav-text">防护手段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5"><span class="nav-number">3.1.</span> <span class="nav-text">同源策略</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
