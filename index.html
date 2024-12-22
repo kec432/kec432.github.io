@@ -157,6 +157,182 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/22/%E6%9C%AA%E5%91%BD%E5%90%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kec的博客">
+      <meta itemprop="description" content="一句话的长度">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/22/%E6%9C%AA%E5%91%BD%E5%90%8D/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-22 20:57:56 / 修改时间：20:58:36" itemprop="dateCreated datePublished" datetime="2024-12-22T20:57:56+08:00">2024-12-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/22/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="kec的博客">
+      <meta itemprop="description" content="一句话的长度">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/22/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-title-link" itemprop="url">中间件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-22 00:00:00 / 修改时间：21:00:17" itemprop="dateCreated datePublished" datetime="2024-12-22T00:00:00+08:00">2024-12-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Apache中间件"><a href="#Apache中间件" class="headerlink" title="Apache中间件"></a>Apache中间件</h1><p>apache目录结构:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bin：存放常用命令工具，如httpd </span><br><span class="line">cgi-bin：存放linux下常用命令，如xxx.sh error：错误记录 </span><br><span class="line">htdocs：网站源码 </span><br><span class="line">icons：网站图标 </span><br><span class="line">manual：手册 </span><br><span class="line">modules：扩展模块</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="ApacheHTTPD换行解析漏洞（CVE-2017-15715"><a href="#ApacheHTTPD换行解析漏洞（CVE-2017-15715" class="headerlink" title="ApacheHTTPD换行解析漏洞（CVE-2017-15715)"></a>ApacheHTTPD换行解析漏洞（CVE-2017-15715)</h3><p>Apache HTTPD是一款HTTP服务器，它可以通过mod_php来运行PHP网页。</p>
+<p>其2.4.0~2.4.29版本中存在一个解析漏洞，在解析PHP时，<code>1.php\x0a</code>将被按照PHP后缀进行解析，导致绕过一些服务器的安全策略。</p>
+<p>可以看到这里获取文件名是需要单独<code>$post[&#39;name&#39;]</code>的，因为如果通过<code>$_FILES[&#39;file&#39;][&#39;name&#39;]</code>获取文件名的话，会把<code>\x0a</code>自动去除，所以<code>$_FILE[&#39;file&#39;][&#39;name&#39;]</code>这种方式获取文件名就不会造成这个漏洞</p>
+<p>影响范围：Apache 2.4.0~2.4.29</p>
+<p>到指定目录打开docker镜像环境<br><img src="https://i.imgur.com/WXaTLpJ.gif"></p>
+<p>等待下载完成后网页访问<br><img src="https://i.imgur.com/NOI5AzX.gif"></p>
+<p>选择文件<br><img src="https://i.imgur.com/r4J46KJ.gif"></p>
+<p>抓包改包，把1.php修改成1.phpa,这里从显示bad file到成功上传<br><img src="https://i.imgur.com/FAepT9T.gif"></p>
+<p>尝试访问，确认成功上传，只不过没有被解析<br><img src="https://i.imgur.com/HFXnSMs.gif"></p>
+<p>修改hex值，将a对应的部分修改成0a,这里是换行符的意思<br><img src="https://i.imgur.com/B2JFg5b.gif"></p>
+<p>成功访问并解析<br><img src="https://i.imgur.com/XRxusrD.gif"></p>
+<h3 id="Apache-HTTP-Server-2-4-49-路径穿越漏洞（CVE-2021-41773）"><a href="#Apache-HTTP-Server-2-4-49-路径穿越漏洞（CVE-2021-41773）" class="headerlink" title="Apache HTTP Server 2.4.49 路径穿越漏洞（CVE-2021-41773）"></a>Apache HTTP Server 2.4.49 路径穿越漏洞（CVE-2021-41773）</h3><p>Apache HTTP Server 2.4.49、2.4.50版本对路径规范化所做的更改中存在一个路径穿越漏洞，攻击者可利用该漏洞读取到Web目录外的其他文件，如系统配置文件、网站源码等，甚至在特定情况下，攻击者可构造恶意请求执行命令，控制服务器。</p>
+<p>影响范围：Apache 2.4.49~2.4.50</p>
+<p>抓包改包，插入payload:<code>/icons/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd</code><br><img src="https://i.imgur.com/wANErvN.gif"></p>
+<p>注意，直接输入url是无法正常访问到的<br><img src="https://i.imgur.com/W9dGK05.gif"></p>
+<h3 id="Apache-HTTP-Server-2-4-50-路径穿越漏洞（CVE-2021-42013）"><a href="#Apache-HTTP-Server-2-4-50-路径穿越漏洞（CVE-2021-42013）" class="headerlink" title="Apache HTTP Server 2.4.50 路径穿越漏洞（CVE-2021-42013）"></a>Apache HTTP Server 2.4.50 路径穿越漏洞（CVE-2021-42013）</h3><p>CVE-2021-42013 是由 CVE-2021-41773 修复不完整所致的漏洞，攻击者可能使用路<br>径遍历攻击将 URL 映射到类似别名指令配置的目录之外的文件。</p>
+<p><img src="https://i.imgur.com/Gg0xxmQ.png"></p>
+<h3 id="Apache-SSI-远程命令执行漏洞"><a href="#Apache-SSI-远程命令执行漏洞" class="headerlink" title="Apache SSI 远程命令执行漏洞"></a>Apache SSI 远程命令执行漏洞</h3><p>在测试任意文件上传漏洞的时候，目标服务端可能不允许上传 php 后缀的文件，当目<br>标服务器开启了 SSI 与 CGI 支持，我们就可以上传 shtml，利用<!--#exec cmd="ls /" --><br>语法来执行命令。<br>使用 SSI(Server Side Include)的 html 文件扩展名，SSI（Server Side Include)，通常称为<br>“服务器端嵌入”或者叫”服务器端包含”，是一种类似于 ASP 的基于服务器的网页制作<br>技术。默认扩展</p>
+<p>构造poc<br>新建文本文档，输入<code>&lt;!--#exec cmd=&quot;id&quot; --&gt;</code>，保存后修改后缀为shtml<br><img src="https://i.imgur.com/g2nxpG5.png"></p>
+<p>上传poc<br><img src="https://i.imgur.com/YLGARbV.gif"></p>
+<h1 id="Tomcat-中间件"><a href="#Tomcat-中间件" class="headerlink" title="Tomcat 中间件"></a>Tomcat 中间件</h1><h3 id="Tomcat-弱密码-后端-Getshell-漏洞"><a href="#Tomcat-弱密码-后端-Getshell-漏洞" class="headerlink" title="Tomcat 弱密码 &amp;&amp; 后端 Getshell 漏洞"></a>Tomcat 弱密码 &amp;&amp; 后端 Getshell 漏洞</h3><p>账户密码都是tomcat,访问<br><img src="https://i.imgur.com/9EFLRg2.gif"></p>
+<p>制作poc</p>
+<ul>
+<li>生成jsp木马文件<br><img src="https://i.imgur.com/TIqN1Ip.gif"></li>
+<li>重命名为shell.php，压缩成<code>.zip</code>文件，重命名为<code>.war</code>文件<br><img src="https://i.imgur.com/QFrmJdF.gif"></li>
+</ul>
+<p>上传poc文件<br><img src="https://i.imgur.com/QLdlNvY.gif"></p>
+<p>使用中国蚁剑进行连接<br><img src="https://i.imgur.com/9HGUX0F.gif"></p>
+<h1 id="Nginx-中间件"><a href="#Nginx-中间件" class="headerlink" title="Nginx 中间件"></a>Nginx 中间件</h1><h3 id="Nginx-文件名逻辑漏洞（CVE-2013-4547）"><a href="#Nginx-文件名逻辑漏洞（CVE-2013-4547）" class="headerlink" title="Nginx 文件名逻辑漏洞（CVE-2013-4547）"></a>Nginx 文件名逻辑漏洞（CVE-2013-4547）</h3><p>构造poc</p>
+<p>前面加上GIF98A作为图片格式的标识，后面加入php代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="title function_ invoke__">file_put_contents</span>(<span class="string">&#x27;cmd.php&#x27;</span>,<span class="string">&#x27;&lt;?php eval($_POST[&quot;cmd&quot;])?&gt;&#x27;</span>)<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&#x2F;&#x2F; 使用 file_put_contents 函数创建或覆盖一个名为 ‘cmd.php’ 的文件。<br>&#x2F;&#x2F; 文件内容是一个一句话木马：<code>&lt;?php eval($_POST[&quot;cmd&quot;])?&gt;</code></p>
+<p><img src="https://i.imgur.com/Xl2zyz5.png"></p>
+<p>提前开启拦截，然后提交构造好的poc，bp拦截到包<br><img src="https://i.imgur.com/Rj9H5wU.gif"></p>
+<p>文件名的后缀添加一个空格，然后关闭拦截<br><img src="https://i.imgur.com/PNdSYas.gif"></p>
+<p>修改url再刷新发送请求<br><img src="https://i.imgur.com/guAMRbo.gif"></p>
+<p>抓包进行修改，然后发包，显示了GIF98A，说明成功访问到了文件</p>
+<ul>
+<li>将%20替换为空格</li>
+<li>将hex中a的61替换成00<br><img src="https://i.imgur.com/UbdriTT.gif"></li>
+</ul>
+<p>访问cmd.php，成功访问到，说明成功解析了<br><img src="https://i.imgur.com/nSzFucT.gif"></p>
+<p>连接到木马<br><img src="https://i.imgur.com/QRFXNjz.gif"></p>
+<h3 id="Nginx-解析漏洞（nginx-parsing-vulnerability）"><a href="#Nginx-解析漏洞（nginx-parsing-vulnerability）" class="headerlink" title="Nginx 解析漏洞（nginx_parsing_vulnerability）"></a>Nginx 解析漏洞（nginx_parsing_vulnerability）</h3><p>命令执行，获取服务器 web 权限，1.jpg&#x2F;.php -&gt; 1.jpg 会被当成 php 格式解析<br>NGINX 解析漏洞主要是由于 NGINX 配置文件以及 PHP 配置文件的错误配置导致的。<br>这个漏洞与 NGINX、PHP 版本无关，属于用户配置不当造成的解析漏洞。具体来说，<br>由于 nginx.conf 的配置导致 nginx 把以’.php’结尾的文件交给 fastcgi 处理，对于任意<br>文件名，在后面添加&#x2F;xxx.php（xxx 为任意字符）后，即可将文件作为 php 解析。<br>当攻击者访问&#x2F;phpinfo.jpg&#x2F;abc.php 时，Nginx 将查看 URL，看到他以.php 结尾，并<br>将路径传递给 php fastcgi 处理程序，php 看到&#x2F;phpinfo.jpg&#x2F;abc.php 不存在，便删除去最<br>后的&#x2F;abc.php，看到 phpinfo.jpg 存在，而后以 php 的形式执行.jpg 的内容。<br>这里涉及到 php 的有一个选择：cgi.fix_pathinfo，该配置默认为 1，开启状态，表<br>示对文件路径进行“修理”。当 php 遇到文件路径“&#x2F;1.aaa&#x2F;2.bbb&#x2F;3.cccc”文件时，若<br>“&#x2F;1.aaa&#x2F;2.bbb&#x2F;3.cccc”不存在，则会去掉最后的”&#x2F;3.ccc”,然后判断“&#x2F;1.aaa&#x2F;2.bbb”是否<br>存在，若不存在，则继续去掉“&#x2F;2.bbb”,以此类推</p>
+<p>构造poc<br><img src="https://i.imgur.com/M5eTRFU.png"></p>
+<p><img src="https://i.imgur.com/DsZ2bAi.gif"></p>
+<p>访问路径，在末尾加上<code>/.php</code>,将其作为php解析<br><img src="https://i.imgur.com/WMkEN03.gif"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/14/%E5%8D%8F%E8%AE%AE%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0%E5%B0%9D%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -182,7 +358,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-12-14 00:00:00 / 修改时间：21:44:58" itemprop="dateCreated datePublished" datetime="2024-12-14T00:00:00+08:00">2024-12-14</time>
+              <time title="创建时间：2024-12-14 00:00:00 / 修改时间：21:46:01" itemprop="dateCreated datePublished" datetime="2024-12-14T00:00:00+08:00">2024-12-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -308,7 +484,7 @@
 <h2 id="netzob的使用"><a href="#netzob的使用" class="headerlink" title="netzob的使用"></a>netzob的使用</h2><p>使用文档参考-1：<br><a target="_blank" rel="noopener" href="https://netzob.github.io/netzob/index.html">Netzob documentation — Netzob Documentation</a><br>使用文档参考-2：<br><a target="_blank" rel="noopener" href="https://netzob.readthedocs.io/en/latest/tutorials/discover_features.html">Discover features of Netzob — Netzob 1.0~git documentation</a><br>使用文档参考-3：<br><a target="_blank" rel="noopener" href="https://netzob.org/resources#Academic-Publications">Netzob : NETwork protocol modeliZatiOn By reverse engineering</a></p>
 <p>讲在开头：<br>就netzob这个程序而言，似乎还没有完成，可以再python库中看到这样的内容（已翻译)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*-                          coding: utf-8                                -*-</span></span><br><span class="line"><span class="comment">#+---------------------------------------------------------------------------+</span></span><br><span class="line"><span class="comment">#|          01001110 01100101 01110100 01111010 01101111 01100010            |</span></span><br><span class="line"><span class="comment">#|                                                                           |</span></span><br><span class="line"><span class="comment">#|                         Netzob：推断通信协议                                |</span></span><br><span class="line"><span class="comment">#+---------------------------------------------------------------------------+</span></span><br><span class="line"><span class="comment">#| 版权所有 (C) 2011-2017 Georges Bossert 和 Frédéric Guihéry                 |</span></span><br><span class="line"><span class="comment">#| 本程序是免费软件：您可以根据由                                                |</span></span><br><span class="line"><span class="comment">#| 自由软件基金会发布的 GNU 通用公共许可证条款重新分发和/或修改它，无论是许可证第     |</span></span><br><span class="line"><span class="comment">#| 3 版，还是（根据您的选择）任何更高版本。                                       |</span></span><br><span class="line"><span class="comment">#|                                                                           |</span></span><br><span class="line"><span class="comment">#| 本程序分发时希望它有用，                                                     |</span></span><br><span class="line"><span class="comment">#| 但不附带任何担保；甚至没有关于                                                |</span></span><br><span class="line"><span class="comment">#| 适销性或特定用途适用性的默示担保。有关更多详细信息，请参阅                       |</span></span><br><span class="line"><span class="comment">#| GNU 通用公共许可证。                                                        |</span></span><br><span class="line"><span class="comment">#|                                                                           |</span></span><br><span class="line"><span class="comment">#| 您应该已随本程序收到一份 GNU 通用公共许可证的副本。如果没有，请参阅 &lt;http://www.gnu.org/licenses/&gt;。|</span></span><br><span class="line"><span class="comment">#+---------------------------------------------------------------------------------------+</span></span><br><span class="line"><span class="comment">#| @url : http://www.netzob.org                                               |</span></span><br><span class="line"><span class="comment">#| @contact : contact@netzob.org                                              |</span></span><br><span class="line"><span class="comment">#| @sponsors : Amossys，http://www.amossys.fr                                 |</span></span><br><span class="line"><span class="comment">#| Supélec，http://www.rennes.supelec.fr/ren/rd/cidre/                        |</span></span><br><span class="line"><span class="comment">#+----------------------------------------------------------------------------------------+</span></span><br></pre></td></tr></table></figure>
-<p>注意！！！重点是中间那句……本程序分发时希望它有用…..离谱玩意儿<br>当然啦，就实验而言，其中的所有变量都是可以正常使用的….但多少有一些问题，如果有时间的话我会试着补全一下</p>
+<p>注意！！！重点是中间那句……本程序分发时希望它有用…..离谱玩意儿<br>当然啦，就实验而言，其中的所有变量都是可以正常使用的….但多少有一些问题，如果有时间的话我会试着说明一下</p>
 <p>接下来参照<a target="_blank" rel="noopener" href="https://netzob.github.io/netzob/tutorials/discover_features.html#discover-features">发现 Netzob 的功能 — Netzob Documentation — 发现 Netzob 的功能 — Netzob Documentation</a><br>来讲述</p>
 <p> 所描述的功能包括以下功能：</p>
 <ol>
@@ -1132,172 +1308,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/06/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kec的博客">
-      <meta itemprop="description" content="一句话的长度">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/10/06/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/" class="post-title-link" itemprop="url">命令执行/代码执行学习基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-10-06 00:00:00" itemprop="dateCreated datePublished" datetime="2024-10-06T00:00:00+08:00">2024-10-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-07 00:06:29" itemprop="dateModified" datetime="2024-10-07T00:06:29+08:00">2024-10-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <p>关于命令执行与代码执行相关的基础学习</p>
-
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/06/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/05/CSRF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="kec的博客">
-      <meta itemprop="description" content="一句话的长度">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/10/05/CSRF/" class="post-title-link" itemprop="url">CSRF基础学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-10-05 00:00:00 / 修改时间：16:21:23" itemprop="dateCreated datePublished" datetime="2024-10-05T00:00:00+08:00">2024-10-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <p>关于CSRF的基础学习</p>
-
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/05/CSRF/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1369,7 +1379,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1382,7 +1392,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

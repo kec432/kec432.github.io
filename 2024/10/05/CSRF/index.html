@@ -28,6 +28,7 @@
 <meta property="og:description" content="关于CSRF的基础学习">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/image.png">
+<meta property="og:image" content="https://i.imgur.com/zCtSKxv.png">
 <meta property="og:image" content="https://i.imgur.com/gAMY0Kj.png">
 <meta property="og:image" content="https://i.imgur.com/CKb0yv1.png">
 <meta property="og:image" content="https://i.imgur.com/8Pj4ADu.png">
@@ -41,7 +42,7 @@
 <meta property="og:image" content="https://i.imgur.com/1pVqd0P.gif">
 <meta property="og:image" content="https://i.imgur.com/zfr8vOO.png">
 <meta property="article:published_time" content="2024-10-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-10-05T08:21:23.664Z">
+<meta property="article:modified_time" content="2024-12-18T01:44:33.910Z">
 <meta property="article:author" content="kec的博客">
 <meta property="article:tag" content="csrf">
 <meta name="twitter:card" content="summary">
@@ -197,10 +198,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-10-05 00:00:00 / 修改时间：16:21:23" itemprop="dateCreated datePublished" datetime="2024-10-05T00:00:00+08:00">2024-10-05</time>
+              <time title="创建时间：2024-10-05 00:00:00" itemprop="dateCreated datePublished" datetime="2024-10-05T00:00:00+08:00">2024-10-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-18 09:44:33" itemprop="dateModified" datetime="2024-12-18T09:44:33+08:00">2024-12-18</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -231,10 +238,11 @@
 
 <span id="more"></span>
 
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>全称Cross-site request forgery，翻译过来就是跨站请求伪造</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>全称Cross-site request forgery，翻译过来就是跨站请求伪造，属于纯逻辑漏洞</p>
 <p>指利用受害者尚未失效的身份认证信息（cookie、会话等），诱骗其点击恶意链接或者访问包含攻击代码的页面，在受害人不知情的情况下以受害者的身份向（身份认证信息所对应的）服务器发送请求，从而完成非法操作(如转账、改密等）</p>
 <p><strong>CSRF与XSS最大的区别就在于，CSRF并没有盗取cookie而是直接利用</strong></p>
 <p><img src="/../img/image.png"></p>
+<p><img src="https://i.imgur.com/zCtSKxv.png"></p>
 <h1 id="攻击演示"><a href="#攻击演示" class="headerlink" title="攻击演示"></a>攻击演示</h1><p>环境：pikachu靶场</p>
 <p><img src="https://i.imgur.com/gAMY0Kj.png"></p>
 <p>构造恶意链接:<br><code>http://192.168.0.215/pikachu-master/vul/csrf/csrfget/csrf_get_edit.php?sex=aaa&amp;phonenum=aaa&amp;add=aaa&amp;email=aaaa&amp;submit=submit</code></p>
@@ -311,6 +319,7 @@
 <p><img src="https://i.imgur.com/1pVqd0P.gif"></p>
 <h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>查看结果，修改后两个用户的信息一致，证明CSRF攻击成功</p>
 <p><img src="https://i.imgur.com/zfr8vOO.png"></p>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><p>GET  <a target="_blank" rel="noopener" href="http://bank.com/?m=1000&uid=1445">http://bank.com?m=1000&amp;uid=1445</a><br>链接类型的 csrf <a target="_blank" rel="noopener" href="http://bank.com/?m=1000&uid=1445">http://bank.com?m=1000&amp;uid=1445</a></p>
 <h1 id="绕过方法"><a href="#绕过方法" class="headerlink" title="绕过方法"></a>绕过方法</h1><p>参照：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/6176?time__1311=n4+xnD0DgDcDR77GOYD/ia4BK5D54hqG=3CQQO4D">绕过CSRF防御 - 先知社区 (aliyun.com)</a></li>
@@ -364,7 +373,7 @@
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zkaqlaoniao/article/details/134399773">漏洞-任意账号注册_任意用户注册漏洞危害-CSDN博客</a></li>
 <li>换行回车注入  jsonp劫持    包中有callback参数</li>
 <li>XSS钓鱼网站</li>
-<li><a target="_blank" rel="noopener" href="https://51tbox.com/web/blog/detail/1297.html">CSRF攻击修改用户微信绑定（SRC思路）-工具盒子 (51tbox.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://51tbox.com/web/blog/detail/1297.html">CSRF攻击修改用户微信绑定（SRC思路）-工具盒子 (51tbox.com)</a>再绑定qq或者微信时，抓到我们 绑定的包，吧那些包六七但留下链接、</li>
 </ol>
 
     </div>
@@ -449,7 +458,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E6%BC%94%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">攻击演示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%B2%E6%8A%A4%E6%89%8B%E6%AE%B5"><span class="nav-number">3.</span> <span class="nav-text">防护手段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">验证码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5%EF%BC%88SOP%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">同源策略（SOP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E4%BB%A4%E7%89%8C"><span class="nav-number">3.3.</span> <span class="nav-text">安全令牌</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E6%BC%94%E7%A4%BA-1"><span class="nav-number">4.</span> <span class="nav-text">攻击演示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="nav-number">4.1.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="nav-number">4.2.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="nav-number">4.3.</span> <span class="nav-text">第三步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">绕过方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%9D%E9%A2%98%E6%8F%90%E5%8F%8A"><span class="nav-number">6.</span> <span class="nav-text">话题提及</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E6%BC%94%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">攻击演示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%B2%E6%8A%A4%E6%89%8B%E6%AE%B5"><span class="nav-number">3.</span> <span class="nav-text">防护手段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">验证码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5%EF%BC%88SOP%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">同源策略（SOP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E4%BB%A4%E7%89%8C"><span class="nav-number">3.3.</span> <span class="nav-text">安全令牌</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E6%BC%94%E7%A4%BA-1"><span class="nav-number">4.</span> <span class="nav-text">攻击演示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="nav-number">4.1.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="nav-number">4.2.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="nav-number">4.3.</span> <span class="nav-text">第三步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">5.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E6%96%B9%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">绕过方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%9D%E9%A2%98%E6%8F%90%E5%8F%8A"><span class="nav-number">7.</span> <span class="nav-text">话题提及</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -465,7 +474,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -478,7 +487,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
