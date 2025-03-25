@@ -96,7 +96,7 @@
       <link href="/2024/10/25/%E6%95%B0%E6%8D%AE%E5%AE%BD%E5%BA%A6/"/>
       <url>/2024/10/25/%E6%95%B0%E6%8D%AE%E5%AE%BD%E5%BA%A6/</url>
       
-        <content type="html"><![CDATA[<ol><li>数学上的数字是没有大小限制的，但计算机的存储是有大小限制的，因此，由于受硬件限制，数据存在长度限制，而且超过一定宽度的数据会被丢弃。</li></ol><p>常见的表示为4位的宽度表示</p><table><thead><tr><th>二进制数</th><th>0000</th><th>0001</th><th>0011</th><th>0011</th><th>0100</th><th>0101</th><th>0110</th><th>0111</th><th>1000</th><th>1001</th><th>1010</th><th>1011</th><th>1100</th><th>1101</th><th>1110</th><th>1111</th></tr></thead><tbody><tr><td>十六进制</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td></tr></tbody></table><p>无符号数：</p><table><thead><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr></thead></table><p>纸面上记录的话逢16进一，但计算机的话由于宽度不够，所以超过16的数直接记为0</p><p>有符号数：</p><table><thead><tr><th>存储正数</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr></thead><tbody><tr><td>存储负数</td><td>F</td><td>E</td><td>D</td><td>C</td><td>B</td><td>A</td><td>9</td><td>8</td></tr><tr><td></td><td>-1</td><td>-2</td><td>-3</td><td>-4</td><td>-5</td><td>-6</td><td>-7</td><td>-8</td></tr></tbody></table><p>7的二进制位0111<br>8的二进制位1000 ，后续到F位1111</p><p><img src="https://i.imgur.com/4eVvOnf.gif"></p><h3 id="常用计量单位"><a href="#常用计量单位" class="headerlink" title="常用计量单位"></a>常用计量单位</h3><p>BYTE  字节  8BIT</p><table><thead><tr><th>BYTE</th><th>字节</th><th>8BIT</th><th>最小数据单位</th></tr></thead><tbody><tr><td>WORD</td><td>字</td><td>16BIT</td><td>2字节</td></tr><tr><td>DWORD</td><td>双字</td><td>32BIT</td><td>4字节</td></tr></tbody></table><h2 id="二进制的逻辑运算"><a href="#二进制的逻辑运算" class="headerlink" title="二进制的逻辑运算"></a>二进制的逻辑运算</h2><h3 id="1-或运算-or"><a href="#1-或运算-or" class="headerlink" title="1. 或运算(or,|)"></a>1. 或运算(or,<code>|</code>)</h3><p>汇编符号：or </p><p>C语言符号： <code>|</code></p><p>只要有一个为1则结果为1</p><p><img src="https://i.imgur.com/GENTFdK.png"></p><h3 id="2-与运算-and"><a href="#2-与运算-and" class="headerlink" title="2. 与运算(and,&amp;)"></a>2. 与运算(and,<code>&amp;</code>)</h3><p>汇编语言：and</p><p>C语言符号<code>&amp;</code></p><p>两个结果都是1则运算结果为1</p><p><img src="https://i.imgur.com/0MdS72K.png"></p><h3 id="异或运算-xor"><a href="#异或运算-xor" class="headerlink" title="异或运算(xor,^)"></a>异或运算(xor,<code>^</code>)</h3><p>汇编语言：xor </p><p>C语言符号：<code>^</code></p><p>两个结果不一样则运算结果为1</p><p><img src="https://i.imgur.com/prg4J3v.png"></p><h3 id="非运算-not"><a href="#非运算-not" class="headerlink" title="非运算(not,!)"></a>非运算(not,<code>!</code>)</h3><p>汇编语言：not </p><p>C语言符号：<code>!</code></p><p>1就是0，0就是1</p><p><img src="https://i.imgur.com/GFUUq4h.png"></p>]]></content>
+        <content type="html"><![CDATA[<blockquote class="blockquote-center">            <i class="fa fa-quote-left"></i>            <p>关于计算机存储的数据宽度</p>            <i class="fa fa-quote-right"></i>          </blockquote><span id="more"></span><ol><li>数学上的数字是没有大小限制的，但计算机的存储是有大小限制的，因此，由于受硬件限制，数据存在长度限制，而且超过一定宽度的数据会被丢弃。</li></ol><p>常见的表示为4位的宽度表示</p><table><thead><tr><th>二进制数</th><th>0000</th><th>0001</th><th>0011</th><th>0011</th><th>0100</th><th>0101</th><th>0110</th><th>0111</th><th>1000</th><th>1001</th><th>1010</th><th>1011</th><th>1100</th><th>1101</th><th>1110</th><th>1111</th></tr></thead><tbody><tr><td>十六进制</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td></tr></tbody></table><p>无符号数：</p><table><thead><tr><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr></thead></table><p>纸面上记录的话逢16进一，但计算机的话由于宽度不够，所以超过16的数直接记为0</p><p>有符号数：</p><table><thead><tr><th>存储正数</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr></thead><tbody><tr><td>存储负数</td><td>F</td><td>E</td><td>D</td><td>C</td><td>B</td><td>A</td><td>9</td><td>8</td></tr><tr><td></td><td>-1</td><td>-2</td><td>-3</td><td>-4</td><td>-5</td><td>-6</td><td>-7</td><td>-8</td></tr></tbody></table><p>7的二进制位0111<br>8的二进制位1000 ，后续到F位1111</p><p><img src="https://i.imgur.com/4eVvOnf.gif"></p><h3 id="常用计量单位"><a href="#常用计量单位" class="headerlink" title="常用计量单位"></a>常用计量单位</h3><p>BYTE  字节  8BIT</p><table><thead><tr><th>BYTE</th><th>字节</th><th>8BIT</th><th>最小数据单位</th></tr></thead><tbody><tr><td>WORD</td><td>字</td><td>16BIT</td><td>2字节</td></tr><tr><td>DWORD</td><td>双字</td><td>32BIT</td><td>4字节</td></tr></tbody></table><h2 id="二进制的逻辑运算"><a href="#二进制的逻辑运算" class="headerlink" title="二进制的逻辑运算"></a>二进制的逻辑运算</h2><h3 id="1-或运算-or"><a href="#1-或运算-or" class="headerlink" title="1. 或运算(or,|)"></a>1. 或运算(or,<code>|</code>)</h3><p>汇编符号：or </p><p>C语言符号： <code>|</code></p><p>只要有一个为1则结果为1</p><p><img src="https://i.imgur.com/GENTFdK.png"></p><h3 id="2-与运算-and"><a href="#2-与运算-and" class="headerlink" title="2. 与运算(and,&amp;)"></a>2. 与运算(and,<code>&amp;</code>)</h3><p>汇编语言：and</p><p>C语言符号<code>&amp;</code></p><p>两个结果都是1则运算结果为1</p><p><img src="https://i.imgur.com/0MdS72K.png"></p><h3 id="异或运算-xor"><a href="#异或运算-xor" class="headerlink" title="异或运算(xor,^)"></a>异或运算(xor,<code>^</code>)</h3><p>汇编语言：xor </p><p>C语言符号：<code>^</code></p><p>两个结果不一样则运算结果为1</p><p><img src="https://i.imgur.com/prg4J3v.png"></p><h3 id="非运算-not"><a href="#非运算-not" class="headerlink" title="非运算(not,!)"></a>非运算(not,<code>!</code>)</h3><p>汇编语言：not </p><p>C语言符号：<code>!</code></p><p>1就是0，0就是1</p><p><img src="https://i.imgur.com/GFUUq4h.png"></p>]]></content>
       
       
       <categories>
@@ -161,31 +161,6 @@
     
     
     <entry>
-      <title>寄存器与汇编语言</title>
-      <link href="/2024/10/20/%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%8E%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
-      <url>/2024/10/20/%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%8E%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/</url>
-      
-        <content type="html"><![CDATA[<blockquote class="blockquote-center">            <i class="fa fa-quote-left"></i>            <p>关于寄存器和汇编语言指令的简单学习</p>            <i class="fa fa-quote-right"></i>          </blockquote><span id="more"></span><p><img src="https://i.imgur.com/ea0VR8R.png"></p><h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><p>首当其冲的是通用寄存器，这些的寄存器是程序执行代码最最常用，也最最基础的寄存器，程序执行过程中，绝大部分时间都是在操作这些寄存器来实现指令功能。</p><p>所谓通用，即这些寄存器CPU没有特殊的用途，交给应用程序“随意”使用。注意，这个随意，我打了引号，对于有些寄存器，CPU有一些潜规则，用的时候要注意。</p><blockquote><ul><li><strong>eax</strong>: 通常用来执行加法，函数调用的返回值一般也放在这里面</li><li><strong>ebx</strong>: 数据存取</li><li><strong>ecx</strong>: 通常用来作为计数器，比如for循环</li><li><strong>edx</strong>: 读写I&#x2F;O端口时，edx用来存放端口号</li><li><strong>esp</strong>: 栈顶指针，指向栈的顶部</li><li><strong>ebp</strong>: 栈底指针，指向栈的底部，通常用<code>ebp+偏移量</code>的形式来定位函数存放在栈中的局部变量</li><li><strong>esi</strong>: 字符串操作时，用于存放数据源的地址</li><li><strong>edi</strong>: 字符串操作时，用于存放目的地址的，和esi两个经常搭配一起使用，执行字符串的复制等操作</li></ul></blockquote><p>mov指令，将后面参数得值赋值给前面寄存器</p><p><img src="https://i.imgur.com/3hpIhst.gif"></p><p>add指令，将后面参数加到前面寄存器<br><img src="https://i.imgur.com/xHxBPxw.gif"></p><p>sub指令，以后面参数再寄存器减去</p><p><img src="https://i.imgur.com/PeU8KC0.gif"></p><h2 id="内存的读写"><a href="#内存的读写" class="headerlink" title="内存的读写"></a>内存的读写</h2><h3 id="寻址公式一：-立即数"><a href="#寻址公式一：-立即数" class="headerlink" title="寻址公式一：[立即数]"></a>寻址公式一：[立即数]</h3><p><strong>读取数据内存值</strong><br>MOV EAX,宽度 地址 DS(立即数)</p><p>MOV EAX,DWORD PTR DS:[0X13FFC4]</p><p>其他两种，<br>MOV EAX,DWORD PTR SS:[ESP或者EBP]<br>MOV EAX,DWORD PTR ES:[EDI]<br>此处主要讲立即数DS</p><p>示例：</p><p>MOV EAX,DWORD PTR DS:[12FFC4]<br>取右下角地址编号[12FFC4]位置的值赋值到寄存器EAX</p><p><img src="https://i.imgur.com/gUiLaNc.gif"></p><p><strong>向内存中写入数据：</strong></p><p>MOV DWORD PTR DS:[0X13FFC4],EAX<br>MOV DWORD PTR DS:[0X13FFC4],EAX</p><p>示例：</p><p>MOV DWORD PTR DS:[12FFC4],87654321<br>将87654321的值写入内存地址[12FFC4]指向的位置中</p><p><img src="https://i.imgur.com/tE6WShy.gif"></p><p><strong>获取内存编号：</strong></p><p>LEA EAX,DWORD PTR DS:[0X13FFC4]<br>LEA EAX,DWORD PTR DS:[ESP+8]</p><p>示例：</p><p>LEA ECX,DWORD PTR DS:[12FFC4]<br>取内存地址[12FFC4]存到ECX中<br><img src="https://i.imgur.com/ilmzO0H.gif"></p><h3 id="寻址公式二：-reg-reg代表任意八个通用寄存器中的任一个"><a href="#寻址公式二：-reg-reg代表任意八个通用寄存器中的任一个" class="headerlink" title="寻址公式二：[reg] reg代表任意八个通用寄存器中的任一个"></a>寻址公式二：[reg] reg代表任意八个通用寄存器中的任一个</h3><p>读取内存值：</p><p>MOV ECS,0x13FFD0<br>MOV EAX,DWORD PTR DS:[ECX]</p><p>向内存写入数据：</p><p>MOV EDX,0x13FFD8<br>MOV DWORD PTR DS:[EDS],0X87654321</p><p>获取内存编号:</p><p>LEA EAX,DWORD PTR DS:[EDX]<br>MOV EAX,DWORD PTR DS:[EDX]</p><h3 id="寻址公式三：-reg-立即数"><a href="#寻址公式三：-reg-立即数" class="headerlink" title="寻址公式三：[reg+立即数]"></a>寻址公式三：[reg+立即数]</h3><p>读取内存值：</p><p>MOV ECX,0X13FFD0<br>MOV EAX,DWORD PTR DS:[ECX+4]</p><p>向内存中写入数据：</p><p>MOV EDX,0x13FFD8<br>MOV DWORD PTR DS:[EDX+0xC],0X87654321</p><p>获取到内存编号：</p><p>LEA EAX,DWORD PTR DS:[EDX+4]<br>MOV EAX,DWORD PTR DS:[EDX+4]</p><h3 id="公式四-reg-reg-1-2-4-8"><a href="#公式四-reg-reg-1-2-4-8" class="headerlink" title="公式四:[reg+reg*{1,2,4,8}]"></a>公式四:[reg+reg*{1,2,4,8}]</h3><p>读取值：</p><p>MOV EAX,13FFC4<br>MOV ECX,2<br>MOV EDX,DWORD PTR DS:[EAX+ECX*4]</p><p>最后等价于将[EAX+8]赋值到EDX</p><p>后续写数据和获取编号类似用法</p><h3 id="寻址公式五-reg-reg-1-2-4-8-立即数"><a href="#寻址公式五-reg-reg-1-2-4-8-立即数" class="headerlink" title="寻址公式五:[reg+reg*[1,2,4,8]+立即数]"></a>寻址公式五:[reg+reg*[1,2,4,8]+立即数]</h3><p>读取值：</p><p>MOV EAX,13FFC4<br>MOV ECX,2<br>MOV EDX,DWORD PTR DS:[EAX+ECX*4+4]</p><p>结果相当于[EAX+8+4]赋值到EDX</p><p>后续差不多</p><h2 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h2><ol><li>本质是内存</li><li>主要存储临时变量</li><li>用于系统维护，主要对于开发人员是透明的</li></ol><p><img src="https://i.imgur.com/SvqeuvE.png"></p><p>示例：</p><p>PUSH 12345678（压值)向栈里存值，栈顶ESP减少4，栈底ESP不变，右下角可以看到增加了一个值</p><p><img src="https://i.imgur.com/IjX8lV9.gif"></p><p>PUSH EAX                 将EAX中的值放到栈里，ESP再减少4</p><p><img src="https://i.imgur.com/tGQp7Do.gif"></p><p>POP ECX             将栈顶ESP内存的值取出到ECX，ESP的值增加4</p><p><img src="https://i.imgur.com/pZW182x.gif"></p><p>POP EDX        将栈顶ESP去一个值，到EDX，ESP的值增加4</p><p><img src="https://i.imgur.com/HmSa6AT.gif"></p><h2 id="变形的艺术"><a href="#变形的艺术" class="headerlink" title="变形的艺术"></a>变形的艺术</h2><p>push eax 可以拆分为</p><ul><li>将esp的值减4（一种表述）：<ul><li>lea esp,dword ptr ss:[esp-4]</li></ul></li><li>将eax的值赋值到esp的内存中（三种表述）：<ul><li>mov dword ptr ss:[esp],eax</li><li>mov esp,esp-4 </li><li>sub esp,4<br>两个步骤顺序可以任意排列，表述也可以任意组合</li></ul></li></ul><p>以此类推，push eax有多种不同的变形方式或者说有多种方式可以达到push eax的效果</p><p>类似的，pop ecx 代码可以拆分为 </p><ul><li>将esp地址的值赋值到ecx：<ul><li>mov ecx,dword ptr ss:[esp]</li></ul></li><li>将esp的值加上4:<ul><li>lea esp,dword ptr ss:[esp+4]</li><li>mov esp,esp+4</li><li>add esp,4</li></ul></li></ul><blockquote><p>[!NOTE] 练习<br>push esp   会如何拆分，如何变形</p></blockquote><p>STPS 指令的作用是将EAX中的值拷贝到EDI指向的地址：</p><p>MOV EAX,12345678<br>LEA EDI,DWORD PTR SS[ESP]<br>STOS DWORD PTR ES:[EDI]</p><p>这段代码大致就是<br>首先将12345678的赋值到EAX寄存器中，然后将ESP的内存地址取到LEA中<br>再用STOS将EAX的值拷贝到EDId的内存地址(第二步中获取到的ESP的地址)所指向的值</p><p>REP指令的目的是重复，而ECX的值为重复的次数</p><p>MOV EAX,0x22222222<br>MOV ECX,2<br>LEA EDI,DWORD PTR SS:[ESP]<br>REP STOS DWORD PTR ES:[EDI]</p><p>大致就是<br>首先将22222222赋值给了EAX，然赋值ECX&#x3D;2，确定循环的次数为2<br>再就是将ESP的地址赋值到EDI<br>最后循环两次，以此将EAX的值丢给EDI，之后EDI自己增加4<br>再将EAX的值丢给[EDI+4],之后EDI再自己+4</p><blockquote><p>[!NOTE] 练习<br>PUSH EBP<br>MOV EBP<br>SUB ESP,40<br>PUSH EBX<br>PUSH ESI<br>PUS EDI<br>LEA EDI,DWORD PTR SS:[EBP-40]<br>MOV ECX,10<br>MOV ECX,10<br>MOV EAX,CCCCCCCC<br>REP STOS DWORD PTR ES:[EDI]<br>MOV EAX,DWORD PTR SS:[EBP+8]<br>ADD EAX,DWORD PTR SS:[EBP+C]<br>POP EDI<br>POP ESI<br>POP EBX<br>MOV ESP,EBP<br>POP EBP<br>RETN</p><p>Contents</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 逆向学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 寄存器 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>堆栈图</title>
       <link href="/2024/10/20/%E5%A0%86%E6%A0%88%E5%9B%BE/"/>
       <url>/2024/10/20/%E5%A0%86%E6%A0%88%E5%9B%BE/</url>
@@ -203,6 +178,31 @@
         <tags>
             
             <tag> 堆栈图 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>寄存器与汇编语言</title>
+      <link href="/2024/10/20/%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%8E%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
+      <url>/2024/10/20/%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%8E%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/</url>
+      
+        <content type="html"><![CDATA[<blockquote class="blockquote-center">            <i class="fa fa-quote-left"></i>            <p>关于寄存器和汇编语言指令的简单学习</p>            <i class="fa fa-quote-right"></i>          </blockquote><span id="more"></span><p><img src="https://i.imgur.com/ea0VR8R.png"></p><h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><p>首当其冲的是通用寄存器，这些的寄存器是程序执行代码最最常用，也最最基础的寄存器，程序执行过程中，绝大部分时间都是在操作这些寄存器来实现指令功能。</p><p>所谓通用，即这些寄存器CPU没有特殊的用途，交给应用程序“随意”使用。注意，这个随意，我打了引号，对于有些寄存器，CPU有一些潜规则，用的时候要注意。</p><blockquote><ul><li><strong>eax</strong>: 通常用来执行加法，函数调用的返回值一般也放在这里面</li><li><strong>ebx</strong>: 数据存取</li><li><strong>ecx</strong>: 通常用来作为计数器，比如for循环</li><li><strong>edx</strong>: 读写I&#x2F;O端口时，edx用来存放端口号</li><li><strong>esp</strong>: 栈顶指针，指向栈的顶部</li><li><strong>ebp</strong>: 栈底指针，指向栈的底部，通常用<code>ebp+偏移量</code>的形式来定位函数存放在栈中的局部变量</li><li><strong>esi</strong>: 字符串操作时，用于存放数据源的地址</li><li><strong>edi</strong>: 字符串操作时，用于存放目的地址的，和esi两个经常搭配一起使用，执行字符串的复制等操作</li></ul></blockquote><p>mov指令，将后面参数得值赋值给前面寄存器</p><p><img src="https://i.imgur.com/3hpIhst.gif"></p><p>add指令，将后面参数加到前面寄存器<br><img src="https://i.imgur.com/xHxBPxw.gif"></p><p>sub指令，以后面参数再寄存器减去</p><p><img src="https://i.imgur.com/PeU8KC0.gif"></p><h2 id="内存的读写"><a href="#内存的读写" class="headerlink" title="内存的读写"></a>内存的读写</h2><h3 id="寻址公式一：-立即数"><a href="#寻址公式一：-立即数" class="headerlink" title="寻址公式一：[立即数]"></a>寻址公式一：[立即数]</h3><p><strong>读取数据内存值</strong><br>MOV EAX,宽度 地址 DS(立即数)</p><p>MOV EAX,DWORD PTR DS:[0X13FFC4]</p><p>其他两种，<br>MOV EAX,DWORD PTR SS:[ESP或者EBP]<br>MOV EAX,DWORD PTR ES:[EDI]<br>此处主要讲立即数DS</p><p>示例：</p><p>MOV EAX,DWORD PTR DS:[12FFC4]<br>取右下角地址编号[12FFC4]位置的值赋值到寄存器EAX</p><p><img src="https://i.imgur.com/gUiLaNc.gif"></p><p><strong>向内存中写入数据：</strong></p><p>MOV DWORD PTR DS:[0X13FFC4],EAX<br>MOV DWORD PTR DS:[0X13FFC4],EAX</p><p>示例：</p><p>MOV DWORD PTR DS:[12FFC4],87654321<br>将87654321的值写入内存地址[12FFC4]指向的位置中</p><p><img src="https://i.imgur.com/tE6WShy.gif"></p><p><strong>获取内存编号：</strong></p><p>LEA EAX,DWORD PTR DS:[0X13FFC4]<br>LEA EAX,DWORD PTR DS:[ESP+8]</p><p>示例：</p><p>LEA ECX,DWORD PTR DS:[12FFC4]<br>取内存地址[12FFC4]存到ECX中<br><img src="https://i.imgur.com/ilmzO0H.gif"></p><h3 id="寻址公式二：-reg-reg代表任意八个通用寄存器中的任一个"><a href="#寻址公式二：-reg-reg代表任意八个通用寄存器中的任一个" class="headerlink" title="寻址公式二：[reg] reg代表任意八个通用寄存器中的任一个"></a>寻址公式二：[reg] reg代表任意八个通用寄存器中的任一个</h3><p>读取内存值：</p><p>MOV ECS,0x13FFD0<br>MOV EAX,DWORD PTR DS:[ECX]</p><p>向内存写入数据：</p><p>MOV EDX,0x13FFD8<br>MOV DWORD PTR DS:[EDS],0X87654321</p><p>获取内存编号:</p><p>LEA EAX,DWORD PTR DS:[EDX]<br>MOV EAX,DWORD PTR DS:[EDX]</p><h3 id="寻址公式三：-reg-立即数"><a href="#寻址公式三：-reg-立即数" class="headerlink" title="寻址公式三：[reg+立即数]"></a>寻址公式三：[reg+立即数]</h3><p>读取内存值：</p><p>MOV ECX,0X13FFD0<br>MOV EAX,DWORD PTR DS:[ECX+4]</p><p>向内存中写入数据：</p><p>MOV EDX,0x13FFD8<br>MOV DWORD PTR DS:[EDX+0xC],0X87654321</p><p>获取到内存编号：</p><p>LEA EAX,DWORD PTR DS:[EDX+4]<br>MOV EAX,DWORD PTR DS:[EDX+4]</p><h3 id="公式四-reg-reg-1-2-4-8"><a href="#公式四-reg-reg-1-2-4-8" class="headerlink" title="公式四:[reg+reg*{1,2,4,8}]"></a>公式四:[reg+reg*{1,2,4,8}]</h3><p>读取值：</p><p>MOV EAX,13FFC4<br>MOV ECX,2<br>MOV EDX,DWORD PTR DS:[EAX+ECX*4]</p><p>最后等价于将[EAX+8]赋值到EDX</p><p>后续写数据和获取编号类似用法</p><h3 id="寻址公式五-reg-reg-1-2-4-8-立即数"><a href="#寻址公式五-reg-reg-1-2-4-8-立即数" class="headerlink" title="寻址公式五:[reg+reg*[1,2,4,8]+立即数]"></a>寻址公式五:[reg+reg*[1,2,4,8]+立即数]</h3><p>读取值：</p><p>MOV EAX,13FFC4<br>MOV ECX,2<br>MOV EDX,DWORD PTR DS:[EAX+ECX*4+4]</p><p>结果相当于[EAX+8+4]赋值到EDX</p><p>后续差不多</p><h2 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h2><ol><li>本质是内存</li><li>主要存储临时变量</li><li>用于系统维护，主要对于开发人员是透明的</li></ol><p><img src="https://i.imgur.com/SvqeuvE.png"></p><p>示例：</p><p>PUSH 12345678（压值)向栈里存值，栈顶ESP减少4，栈底ESP不变，右下角可以看到增加了一个值</p><p><img src="https://i.imgur.com/IjX8lV9.gif"></p><p>PUSH EAX                 将EAX中的值放到栈里，ESP再减少4</p><p><img src="https://i.imgur.com/tGQp7Do.gif"></p><p>POP ECX             将栈顶ESP内存的值取出到ECX，ESP的值增加4</p><p><img src="https://i.imgur.com/pZW182x.gif"></p><p>POP EDX        将栈顶ESP去一个值，到EDX，ESP的值增加4</p><p><img src="https://i.imgur.com/HmSa6AT.gif"></p><h2 id="变形的艺术"><a href="#变形的艺术" class="headerlink" title="变形的艺术"></a>变形的艺术</h2><p>push eax 可以拆分为</p><ul><li>将esp的值减4（一种表述）：<ul><li>lea esp,dword ptr ss:[esp-4]</li></ul></li><li>将eax的值赋值到esp的内存中（三种表述）：<ul><li>mov dword ptr ss:[esp],eax</li><li>mov esp,esp-4 </li><li>sub esp,4<br>两个步骤顺序可以任意排列，表述也可以任意组合</li></ul></li></ul><p>以此类推，push eax有多种不同的变形方式或者说有多种方式可以达到push eax的效果</p><p>类似的，pop ecx 代码可以拆分为 </p><ul><li>将esp地址的值赋值到ecx：<ul><li>mov ecx,dword ptr ss:[esp]</li></ul></li><li>将esp的值加上4:<ul><li>lea esp,dword ptr ss:[esp+4]</li><li>mov esp,esp+4</li><li>add esp,4</li></ul></li></ul><blockquote><p>[!NOTE] 练习<br>push esp   会如何拆分，如何变形</p></blockquote><p>STPS 指令的作用是将EAX中的值拷贝到EDI指向的地址：</p><p>MOV EAX,12345678<br>LEA EDI,DWORD PTR SS[ESP]<br>STOS DWORD PTR ES:[EDI]</p><p>这段代码大致就是<br>首先将12345678的赋值到EAX寄存器中，然后将ESP的内存地址取到LEA中<br>再用STOS将EAX的值拷贝到EDId的内存地址(第二步中获取到的ESP的地址)所指向的值</p><p>REP指令的目的是重复，而ECX的值为重复的次数</p><p>MOV EAX,0x22222222<br>MOV ECX,2<br>LEA EDI,DWORD PTR SS:[ESP]<br>REP STOS DWORD PTR ES:[EDI]</p><p>大致就是<br>首先将22222222赋值给了EAX，然赋值ECX&#x3D;2，确定循环的次数为2<br>再就是将ESP的地址赋值到EDI<br>最后循环两次，以此将EAX的值丢给EDI，之后EDI自己增加4<br>再将EAX的值丢给[EDI+4],之后EDI再自己+4</p><blockquote><p>[!NOTE] 练习<br>PUSH EBP<br>MOV EBP<br>SUB ESP,40<br>PUSH EBX<br>PUSH ESI<br>PUS EDI<br>LEA EDI,DWORD PTR SS:[EBP-40]<br>MOV ECX,10<br>MOV ECX,10<br>MOV EAX,CCCCCCCC<br>REP STOS DWORD PTR ES:[EDI]<br>MOV EAX,DWORD PTR SS:[EBP+8]<br>ADD EAX,DWORD PTR SS:[EBP+C]<br>POP EDI<br>POP ESI<br>POP EBX<br>MOV ESP,EBP<br>POP EBP<br>RETN</p><p>Contents</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 逆向学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 寄存器 </tag>
             
         </tags>
       
@@ -282,32 +282,6 @@
             <tag> csrf </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2024/10/04/%E6%9C%AA%E5%91%BD%E5%90%8D/"/>
-      <url>/2024/10/04/%E6%9C%AA%E5%91%BD%E5%90%8D/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>{{title}}</title>
-      <link href="/2024/10/04/55/"/>
-      <url>/2024/10/04/55/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
       
     </entry>
     
